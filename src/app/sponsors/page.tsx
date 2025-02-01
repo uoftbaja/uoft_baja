@@ -9,7 +9,15 @@ export default function Sponsors() {
           <h2 className="text-2xl font-semibold mb-8 text-gray-800">
             Current Sponsors
           </h2>
-          {/* Add sponsor logos/content here */}
+          <div className="flex justify-center">
+            <div className="w-48 h-48 relative">
+              <img
+                src="/skule.png"
+                alt="SKULE Logo"
+                className="w-full h-full object-contain"
+              />
+            </div>
+          </div>
         </section>
 
         {/* Thank You Message */}
@@ -40,14 +48,25 @@ export default function Sponsors() {
         </section>
 
         {/* Sponsorship Package */}
-        <section>
+        <section className="space-y-6">
           <a
-            href="/sponsorship-package.pdf" // Add your actual PDF file
-            download
+            href="https://drive.google.com/file/d/1lSKyjdOUsumiQ_kuDv1wLSgJK_z07k7K/view?usp=drive_link"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-block bg-blue-600 text-white px-8 py-3 rounded-md hover:bg-blue-700 transition-colors font-semibold"
           >
             Download Sponsorship Package
           </a>
+          <p className="text-gray-700 text-lg">
+            If you are interested in sponsoring our team please reach out via
+            email:{" "}
+            <a
+              href="mailto:uoftbajaracing@gmail.com"
+              className="text-blue-600 hover:text-blue-800"
+            >
+              uoftbajaracing@gmail.com
+            </a>
+          </p>
         </section>
       </div>
     </main>

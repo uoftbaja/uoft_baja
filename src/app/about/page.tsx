@@ -4,7 +4,7 @@ export default function About() {
   return (
     <main className="bg-white min-h-screen pb-16">
       <div className="max-w-4xl mx-auto px-4 py-16 md:px-8">
-        <h1 className="text-4xl font-bold mb-12 text-gray-900">About Us</h1>
+        <h1 className="text-4xl font-bold mb-12 text-gray-900">About Baja</h1>
 
         <section className="mb-2">
           <h2 className="text-2xl font-semibold mb-6 text-gray-800">
@@ -36,7 +36,7 @@ export default function About() {
             <div className="aspect-video w-full">
               <iframe
                 className="w-full h-full"
-                src="https://www.youtube.com/embed/t4b6awSZxJ8?si=SJifPavjQKJjs-gX&amp;controls=0"
+                src="https://www.youtube.com/embed/AEWifdPl0Mw?si=QoPB3E4oZ06g08NR&amp;controls=0"
                 title="YouTube video player"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
@@ -76,22 +76,6 @@ export default function About() {
             must be student designed and assembled, which gives students an
             opportunity to dive into engineering problems in a constructive
             environment to gain experience.
-          </p>
-        </section>
-
-        <section>
-          <h2 className="text-2xl font-semibold mb-6 text-gray-800">
-            Our History
-          </h2>
-          <p className="text-gray-700 text-lg leading-relaxed">
-            The University of Toronto Baja Racing Team was originally founded in
-            2012 with a small team of four passionate students united by a big
-            vision. The team would go on to compete in the 2014 Kansas, 2015
-            Maryland and 2016 Rochester SAE competitions with modest success
-            until disbandment in 2018. Fast forward to 2025, with renewed
-            interest in Baja racing and a dedicated team of students, we are
-            taking inspiration from our legacy and the lessons learned by
-            previous members and bringing Baja back to UofT for good.
           </p>
         </section>
       </div>
