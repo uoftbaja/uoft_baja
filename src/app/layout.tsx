@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Yellowtail, Open_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const yellowtail = Yellowtail({
+  weight: "400",
+  variable: "--font-yellowtail",
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const openSans = Open_Sans({
+  weight: "variable",
+  variable: "--font-opensans",
 });
 
 export const metadata: Metadata = {
@@ -25,11 +25,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white min-h-screen flex flex-col`}
-        suppressHydrationWarning
-      >
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${openSans.className} ${yellowtail.variable} ${openSans.variable}`}
+    >
+      <body suppressHydrationWarning className="overflow-x-hidden">
         <Navbar />
         {children}
         <Footer />

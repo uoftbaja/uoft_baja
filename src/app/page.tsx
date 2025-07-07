@@ -1,39 +1,90 @@
+"use client";
+
 import Image from "next/image";
 import ImageGallery from "@/components/ImageGallery";
 import Link from "next/link";
+import { QuoteBanner } from "@/components/QuoteBanner";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { subTeams } from "@/data/subteams";
+import { SubTeamCard } from "@/components/SubTeam";
+import { Title } from "@/components/Title";
+import { DisplayCard } from "@/components/DisplayCard";
+import { MotionValue, useScroll, useTransform } from "framer-motion";
+import { useRef } from "react";
+
+function useParallax(value: MotionValue<number>, distance: number) {
+	return useTransform(value, [0, 1], [-distance, distance]);
+}
 
 export default function Home() {
-  return (
-    <main>
-      <ImageGallery />
-      <section className="bg-white py-16 px-4 md:px-8">
-        <div className="max-w-4xl mx-auto">
-          <p className="text-gray-700 text-lg mb-8 leading-relaxed">
-            The U of T Baja Team aims to give students of many disciplines an
-            avenue to hone their skills in a supportive environment through
-            designing, building and competing in the{" "}
-            <a
-              href="https://www.bajasae.net/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-600 hover:text-blue-800 underline"
-            >
-              Baja SAE competition
-            </a>{" "}
-            with an entirely student designed vehicle. The U of T Baja team was
-            originally founded in 2012 and competed for almost 10 years before
-            the team dissolved. In the fall of 2024 the team was restarted from
-            scratch and is actively being rebuilt. Our goal is to have an
-            entirely rebuilt car to compete with by Spring 2026.
-          </p>
-          <Link
-            href="/about"
-            className="inline-block bg-blue-600 text-white px-8 py-3 rounded-md hover:bg-blue-700 transition-colors font-semibold"
-          >
-            Learn More
-          </Link>
-        </div>
-      </section>
-    </main>
-  );
+	const ref = useRef(null);
+	const { scrollYProgress } = useScroll(); // scrollYProgress is a value betweeo 0 and 1
+
+	return (
+		<main ref={ref}>
+			<ImageGallery />
+			{/* <div className="px-96 py-4 flex flex-col items-center gap-16"> */}
+			<section className="flex flex-col bg-gray-300/30 px-96 py-4 h-screen gap-16 justify-center rounded-3xl m-4 shadow">
+				<QuoteBanner />
+				<DisplayCard title="What is Baja?">
+					<span className="text-xl leading-relaxed">
+						The Baja SAE competition is composed of static and
+						dynamic events. The static event is the business
+						presentation, written reports, design evaluation and
+						cost reports. The dynamic events are hill climb, sled
+						pull, maneuverability events, rock crawl, suspension and
+						traction events, acceleration and endurance race. The
+						dynamic events can change depending on where the
+						competition is being held. The major competitions are
+						held across the United States, some of the past
+						locations have been: California, Pennsylvania, Michigan,
+						Oregon and Ohio among many more.{" "}
+						<Link
+							href="https://www.bajasae.net/res/ResultsLanding.aspx"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="text-blue-600 hover:text-blue-800 underline"
+						>
+							See past results
+						</Link>{" "}
+						for all past locations with results.
+					</span>
+				</DisplayCard>
+				<DisplayCard title="About Us:">
+					<span className="text-xl leading-relaxed">
+						The U of T Baja Team aims to give students of many
+						disciplines an avenue to hone their skills in a
+						supportive environment through designing, building and
+						competing in the{" "}
+						<Link
+							href="https://www.bajasae.net/"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="text-blue-600 hover:text-blue-800 underline"
+						>
+							Baja SAE competition
+						</Link>{" "}
+						with an entirely student designed vehicle. The U of T
+						Baja team was originally founded in 2012 and competed
+						for almost 10 years before the team dissolved. In the
+						fall of 2024 the team was restarted from scratch and is
+						actively being rebuilt. Our goal is to have an entirely
+						rebuilt car to compete with by Spring 2026.
+					</span>
+				</DisplayCard>
+			</section>
+			<section className="h-screen flex flex-col gap-16 items-center px-96 py-4 justify-center">
+				<Title>Our Subteams</Title>
+				<span className="text-2xl">
+					Our team is divided into 7 core subteams across engineering,
+					business, design, and outreach
+				</span>
+				<div className="grid grid-cols-4 gap-16">
+					{subTeams.map((subteam) => {
+						return <SubTeamCard {...subteam} key={subteam.title} />;
+					})}
+				</div>
+			</section>
+		</main>
+	);
 }

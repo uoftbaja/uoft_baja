@@ -1,7 +1,29 @@
 "use client";
 
+import {
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuIndicator,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+  navigationMenuTriggerStyle,
+  NavigationMenuViewport,
+} from "@/components/ui/navigation-menu";
+import Link from "next/link";
+
+interface NavItems extends NavItemsProps {
+  dropdown?: NavItemsProps[];
+}
+
+interface NavItemsProps {
+  label: string;
+  href: string;
+}
+
 const Navbar = () => {
-  const navItems = [
+  const navItems: NavItems[] = [
     { label: "Home", href: "/" },
     {
       label: "About Us",
@@ -17,41 +39,48 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="sticky top-0 z-50 bg-white shadow-md">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="flex justify-center items-center h-16">
-          {navItems.map((item) => (
-            <div key={item.label} className="relative">
-              {item.dropdown ? (
-                <div className="group relative">
-                  <button className="px-4 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-md transition-colors">
+    <div className="bg-transparent z-30 absolute my-5 grid place-content-center w-screen">
+      <NavigationMenu>
+        <NavigationMenuList className="">
+          {navItems.map((item) => {
+            if (item.dropdown) {
+              return (
+                <NavigationMenuItem key={item.label}>
+                  <NavigationMenuTrigger>{item.label}</NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="px-2 py-4 text-center flex">
+                      {item.dropdown.map((dropdown) => (
+                        <NavigationMenuLink
+                          key={dropdown.label}
+                          title={dropdown.label}
+                          href={dropdown.href}
+                          className={navigationMenuTriggerStyle()}
+                        >
+                          {dropdown.label}
+                        </NavigationMenuLink>
+                      ))}
+                      {/* test */}
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              );
+            } else {
+              return (
+                <NavigationMenuItem key={item.label}>
+                  <NavigationMenuLink
+                    className={navigationMenuTriggerStyle()}
+                    href={item.href}
+                  >
                     {item.label}
-                  </button>
-                  <div className="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 invisible opacity-0 group-hover:visible group-hover:opacity-100 transition-all duration-150">
-                    {item.dropdown.map((dropdownItem) => (
-                      <a
-                        key={dropdownItem.label}
-                        href={dropdownItem.href}
-                        className="block px-4 py-2 text-gray-700 hover:bg-gray-100"
-                      >
-                        {dropdownItem.label}
-                      </a>
-                    ))}
-                  </div>
-                </div>
-              ) : (
-                <a
-                  href={item.href}
-                  className="px-4 py-2 text-gray-700 hover:text-gray-900 hover:bg-gray-100 rounded-md transition-colors"
-                >
-                  {item.label}
-                </a>
-              )}
-            </div>
-          ))}
-        </div>
-      </div>
-    </nav>
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+              );
+            }
+          })}
+        </NavigationMenuList>
+        <NavigationMenuViewport />
+      </NavigationMenu>
+    </div>
   );
 };
 
