@@ -82,15 +82,14 @@ interface ImageCardProps {
 export const ImageCard = ({ src, title, onClick }: ImageCardProps) => {
 	return (
 		<div className={`${imageHeight} relative`} onClick={onClick}>
-			<div className="absolute inset-0 bg-black/35 z-10 h-full" />
 			<Image
 				src={src}
 				fill
 				alt="UofT Baja Racing Team"
 				className="object-cover relative!"
 			/>
-			<div className="absolute z-20 inset-0 grid place-content-center gap-8">
-				<h1 className="text-9xl font-bold text-center font-yellowtail text-white">
+			<div className="absolute z-20 inset-0 grid place-content-center gap-8 p-2 bg-black/35">
+				<h1 className="text-5xl md:text-9xl font-bold text-center font-yellowtail text-white">
 					{title}
 				</h1>
 				<Button

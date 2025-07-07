@@ -5,8 +5,8 @@ import { subTeams } from "@/data/subteams";
 
 export default function Join() {
 	return (
-		<main className="md:px-96 py-32 w-full flex flex-col gap-16 text-center">
-			<div className="flex flex-col gap-8 items-center ">
+		<main className="px-4 lg:px-96 py-32 w-full flex flex-col gap-16">
+			<div className="flex flex-col gap-8 items-center text-center">
 				<Title className="font-yellowtail text-8xl">Join Us!</Title>
 				<Description>
 					Itching to get your hands dirty? Want to leave behind a
@@ -22,14 +22,14 @@ export default function Join() {
 
 			{/* Subteams */}
 			<section className="flex flex-col gap-16 items-center justify-center w-full">
-				<div className="grid grid-cols-4 gap-16 w-full">
+				<div className="grid grid-cols-1 lg:grid-cols-4 gap-16 w-full">
 					{subTeams.map((subteam) => {
 						return <SubTeamCard {...subteam} key={subteam.title} />;
 					})}
 				</div>
 			</section>
 
-			<p className="text-xl font-semibold mb-12">
+			<p className="text-xl font-semibold mb-12 text-center">
 				There is something for everyone no matter the discipline!
 			</p>
 
