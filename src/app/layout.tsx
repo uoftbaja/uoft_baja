@@ -7,11 +7,13 @@ import Footer from "@/components/Footer";
 const yellowtail = Yellowtail({
 	weight: "400",
 	variable: "--font-yellowtail",
+	subsets: ["latin"],
 });
 
 const openSans = Open_Sans({
 	weight: "variable",
 	variable: "--font-opensans",
+	subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
