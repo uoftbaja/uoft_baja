@@ -7,7 +7,7 @@ import { QuoteBanner } from "@/components/QuoteBanner";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { subTeams } from "@/data/subteams";
 import { SubTeamCard } from "@/components/SubTeam";
-import { Title } from "@/components/Title";
+import { Description, Title } from "@/components/Text";
 import { DisplayCard } from "@/components/DisplayCard";
 import { MotionValue, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
@@ -21,10 +21,10 @@ export default function Home() {
 	const { scrollYProgress } = useScroll(); // scrollYProgress is a value betweeo 0 and 1
 
 	return (
-		<main ref={ref}>
+		<main>
 			<ImageGallery />
 			{/* <div className="px-96 py-4 flex flex-col items-center gap-16"> */}
-			<section className="flex flex-col bg-gray-300/30 px-96 py-4 h-screen gap-16 justify-center rounded-3xl m-4 shadow">
+			<section className="flex flex-col bg-gray-300/30 px-96 py-4 h-screen gap-16 justify-center rounded-3xl m-4 shadow-sm">
 				<QuoteBanner />
 				<DisplayCard title="What is Baja?">
 					<span className="text-xl leading-relaxed">
@@ -75,10 +75,10 @@ export default function Home() {
 			</section>
 			<section className="h-screen flex flex-col gap-16 items-center px-96 py-4 justify-center">
 				<Title>Our Subteams</Title>
-				<span className="text-2xl">
+				<Description>
 					Our team is divided into 7 core subteams across engineering,
 					business, design, and outreach
-				</span>
+				</Description>
 				<div className="grid grid-cols-4 gap-16">
 					{subTeams.map((subteam) => {
 						return <SubTeamCard {...subteam} key={subteam.title} />;

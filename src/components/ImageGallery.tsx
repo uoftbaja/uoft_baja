@@ -87,7 +87,7 @@ export const ImageCard = ({ src, title, onClick }: ImageCardProps) => {
 				src={src}
 				fill
 				alt="UofT Baja Racing Team"
-				className="object-cover !relative"
+				className="object-cover relative!"
 			/>
 			<div className="absolute z-20 inset-0 grid place-content-center gap-8">
 				<h1 className="text-9xl font-bold text-center font-yellowtail text-white">

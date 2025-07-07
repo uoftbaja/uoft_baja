@@ -1,3 +1,5 @@
+"use client";
+
 import { TeamMemberType } from "@/types/teamMembers";
 import { Icon } from "lucide-react";
 import Image from "next/image";
@@ -9,7 +11,9 @@ import {
 	CardTitle,
 	CardContent,
 	CardDescription,
+	CardAction,
 } from "./ui/card";
+import { Button } from "./ui/button";
 
 export function TeamMember({
 	name,
@@ -18,31 +22,43 @@ export function TeamMember({
 	imagePath,
 }: TeamMemberType) {
 	return (
-		<Card className="hover:shadow-2xl shadow duration-300">
+		<Card className="hover:shadow-2xl shadow-sm duration-300">
+			<div className="relative aspect-3/4">
+				{imagePath ? (
+					<Image
+						src={imagePath as string}
+						alt={name}
+						fill
+						className="object-cover px-4"
+					/>
+				) : (
+					<div className="w-full h-full bg-gray-200 flex items-center justify-center"></div>
+				)}
+			</div>
 			<CardHeader>
-				<div className="relative aspect-[3/4]">
-					{imagePath ? (
-						<Image
-							src={imagePath as string}
-							alt={name}
-							fill
-							className="object-cover"
-						/>
-					) : (
-						<div className="w-full h-full bg-gray-200 flex items-center justify-center"></div>
-					)}
-				</div>
 				<CardTitle className="text-2xl font-semibold flex gap-2 items-center">
 					{name}
 				</CardTitle>
 				<CardDescription>{program}</CardDescription>
+				{linkedinUrl && (
+					<CardAction>
+						<Button
+							variant={"outline"}
+							onClick={() => {
+								window.open(linkedinUrl, "_blank");
+							}}
+						>
+							<FaLinkedin />
+						</Button>
+					</CardAction>
+				)}
 			</CardHeader>
 		</Card>
 	);
 }
 
 // <div className="relative group">
-// 	<div className="aspect-[3/4] relative overflow-hidden rounded-lg">
+// 	<div className="aspect-3/4 relative overflow-hidden rounded-lg">
 // 		{imagePath ? (
 // 			<Image
 // 				src={imagePath as string}

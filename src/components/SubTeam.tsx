@@ -3,7 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
 
 export function SubTeamCard({ title, description, Icon }: SubTeamType) {
 	return (
-		<Card className="hover:shadow-2xl shadow duration-300">
+		<Card className="hover:shadow-2xl shadow-sm duration-300">
 			<CardHeader>
 				<CardTitle className="text-2xl font-semibold flex gap-2 items-center">
 					{Icon && <Icon />} {title}
