@@ -15,7 +15,7 @@ export function QuoteBanner() {
 	}, []);
 
 	return (
-		<div className="flex items-center my-16 h-fit w-full">
+		<div className="flex items-center h-fit w-full">
 			{/* <motion.div
         initial={{
           x: width * 1.4,

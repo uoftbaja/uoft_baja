@@ -116,7 +116,7 @@ const Navbar = () => {
 				variant={"outline"}
 				onClick={() => setShowMenu((state) => !state)}
 			>
-				{showMenu ? <Menu /> : <X />}
+				{!showMenu ? <Menu /> : <X />}
 			</Button>
 		</div>
 	);
