@@ -5,7 +5,7 @@ import { teamMembers } from "@/data/teamMembers";
 
 export default function Team() {
 	return (
-		<main className="px-4 md:px-96 py-32 w-full">
+		<main className="px-4 2xl:px-96 py-32 w-full min-h-screen">
 			<div className="">
 				<div className="flex flex-col gap-8 mb-16 items-center text-center">
 					<Title className="font-yellowtail text-8xl">

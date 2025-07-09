@@ -1,18 +1,18 @@
+import { DisplayCard } from "@/components/DisplayCard";
+import { Description, Title } from "@/components/Text";
 import Link from "next/link";
 
 export default function About() {
 	return (
-		<main className="bg-white min-h-screen pb-16">
-			<div className="max-w-4xl mx-auto px-4 py-16 md:px-8">
-				<h1 className="text-4xl font-bold mb-12 text-gray-900">
-					About Baja
-				</h1>
+		<main className="px-4 2xl:px-96 py-32 w-full flex flex-col gap-16 min-h-screen">
+			<div className="flex flex-col gap-16 items-center text-center">
+				<Title className="font-yellowtail text-8xl">About Baja</Title>
 
-				<section className="mb-2">
-					<h2 className="text-2xl font-semibold mb-6 text-gray-800">
+				<section className="grid gap-4">
+					<Description>
 						What does the competition look like?
-					</h2>
-					<p className="text-gray-700 text-lg leading-relaxed">
+					</Description>
+					<p className="text-lg leading-relaxed">
 						The Baja SAE competition is composed of static and
 						dynamic events. The static event is the business
 						presentation, written reports, design evaluation and
@@ -24,8 +24,8 @@ export default function About() {
 			</div>
 
 			{/* Video section with 80% max-width */}
-			<div className="w-full mx-auto px-4 mb-16">
-				<div className="max-w-[80%] mx-auto">
+			<div className="w-full mx-auto px-4 mb-8">
+				<div className="mx-auto">
 					<div className="grid grid-cols-1 md:grid-cols-2 gap-4">
 						<div className="aspect-video w-full">
 							<iframe
@@ -49,8 +49,8 @@ export default function About() {
 				</div>
 			</div>
 
-			<div className="max-w-4xl mx-auto px-4 md:px-8">
-				<p className="text-gray-700 text-lg mb-8 leading-relaxed">
+			<div className="px-4 md:px-8 flex flex-col gap-8">
+				<p className="text-lg leading-relaxed">
 					The dynamic events can change depending on where the
 					competition is being held. The major competitions are held
 					across the United States, some of the past locations have
@@ -67,11 +67,8 @@ export default function About() {
 					for all past locations with results.
 				</p>
 
-				<section className="mb-12">
-					<h2 className="text-2xl font-semibold mb-6 text-gray-800">
-						Goal of the car
-					</h2>
-					<p className="text-gray-700 text-lg leading-relaxed">
+				<DisplayCard title="Goal of the car">
+					<p className="text-lg leading-relaxed">
 						The goal in mind when designing the car is to create a
 						car that handles all of the dynamic events well while
 						remaining viable for production at a scale of 4000
@@ -83,7 +80,7 @@ export default function About() {
 						into engineering problems in a constructive environment
 						to gain experience.
 					</p>
-				</section>
+				</DisplayCard>
 			</div>
 		</main>
 	);

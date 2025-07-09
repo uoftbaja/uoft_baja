@@ -11,6 +11,7 @@ import { Description, Title } from "@/components/Text";
 import { DisplayCard } from "@/components/DisplayCard";
 import { MotionValue, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
+import { useRouter } from "next/router";
 
 function useParallax(value: MotionValue<number>, distance: number) {
 	return useTransform(value, [0, 1], [-distance, distance]);
@@ -26,7 +27,7 @@ export default function Home() {
 			{/* <div className="px-96 py-4 flex flex-col items-center gap-16"> */}
 			<section className="flex flex-col bg-gray-300/30 px-4 2xl:px-96 py-4 min-h-screen h-full gap-16 justify-center rounded-3xl m-4 shadow-sm">
 				<QuoteBanner />
-				<DisplayCard title="What is Baja?">
+				<DisplayCard title={<Link href={"/about"}>What is Baja?</Link>}>
 					<span className="text-xl leading-relaxed">
 						The Baja SAE competition is composed of static and
 						dynamic events. The static event is the business
@@ -50,7 +51,9 @@ export default function Home() {
 						for all past locations with results.
 					</span>
 				</DisplayCard>
-				<DisplayCard title="About Us:">
+				<DisplayCard
+					title={<Link href={"/about/history"}>About Us</Link>}
+				>
 					<span className="text-xl leading-relaxed">
 						The U of T Baja Team aims to give students of many
 						disciplines an avenue to hone their skills in a

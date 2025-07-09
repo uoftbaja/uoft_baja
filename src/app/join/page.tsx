@@ -5,7 +5,7 @@ import { subTeams } from "@/data/subteams";
 
 export default function Join() {
 	return (
-		<main className="px-4 lg:px-96 py-32 w-full flex flex-col gap-16">
+		<main className="px-4 2xl:px-96 py-32 w-full flex flex-col gap-16 min-h-screen">
 			<div className="flex flex-col gap-8 items-center text-center">
 				<Title className="font-yellowtail text-8xl">Join Us!</Title>
 				<Description>
