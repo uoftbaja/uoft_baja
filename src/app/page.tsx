@@ -75,7 +75,7 @@ export default function Home() {
 						rebuilt car to compete with by Spring 2026.
 					</span>
 				</DisplayCard>
-			</section>
+			</section>{" "}
 			<section className="min-h-screen h-full flex flex-col gap-16 items-center px-4 2xl:px-96 py-4 justify-center">
 				<Title>Our Subteams</Title>
 				<Description>

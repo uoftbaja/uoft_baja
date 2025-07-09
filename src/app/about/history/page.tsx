@@ -30,6 +30,12 @@ export default function History() {
 	return (
 		<main className="px-4 2xl:px-96 py-32 w-full flex flex-col gap-16 min-h-screen">
 			<div className="flex flex-col gap-16 items-center text-center">
+				<Image
+					src="/UTBR_Logo.png"
+					alt="logo"
+					fill
+					className="object-contain relative! w-fit!"
+				/>
 				<Title className="font-yellowtail text-8xl">Our History</Title>
 
 				<section>

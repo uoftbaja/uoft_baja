@@ -1,4 +1,3 @@
-import { ImageCard } from "@/components/ImageGallery";
 import { TeamMember } from "@/components/TeamMember";
 import { Description, Title } from "@/components/Text";
 import { teamMembers } from "@/data/teamMembers";

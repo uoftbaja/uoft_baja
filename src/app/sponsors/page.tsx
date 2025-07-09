@@ -31,7 +31,7 @@ export default function Sponsors() {
 						])}
 					>
 						{sponsors.map((sponsor) => (
-							<SponsorCard {...sponsor} />
+							<SponsorCard {...sponsor} key={sponsor.name} />
 						))}
 					</div>
 				</section>

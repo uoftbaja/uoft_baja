@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 export function QuoteBanner() {
 	const quote = "Powering the next generation of students";
@@ -15,7 +16,7 @@ export function QuoteBanner() {
 	}, []);
 
 	return (
-		<div className="flex items-center h-fit w-full">
+		<div className="md:flex items-center h-fit w-full">
 			{/* <motion.div
         initial={{
           x: width * 1.4,
@@ -29,6 +30,12 @@ export function QuoteBanner() {
           ease: "easeInOut",
         }}
       > */}
+			<Image
+				src="/UTBR_Logo.png"
+				alt="logo"
+				fill
+				className="object-contain relative! w-fit!"
+			/>
 			<h1 className="text-5xl md:text-8xl font-bold text-center">
 				{quote}
 			</h1>
