@@ -1,75 +1,31 @@
-import TeamMember from "@/components/TeamMember";
-
-const teamMembers = [
-  {
-    name: "Russell Passmore",
-    program: "MECH 2T7 + PEY",
-    linkedinUrl: "https://www.linkedin.com/in/russell-passmore",
-    imagePath: "/ind/russell_passmore.png",
-  },
-  {
-    name: "Qin Bei",
-    program: "MECH 2T7 + PEY",
-    linkedinUrl: "https://www.linkedin.com/in/qin-bei",
-    imagePath: "/ind/qin_bei_lol.png",
-  },
-  {
-    name: "Naomi Lau",
-    program: "MECH 2T7 + PEY",
-    imagePath: "/ind/naomi_lau.png",
-  },
-  {
-    name: "Stephen Kang",
-    program: "MECH 2T7 + PEY",
-    linkedinUrl: "https://www.linkedin.com/in/stephenjkang",
-    imagePath: "/ind/stephen_kang.png",
-  },
-  {
-    name: "Ali Alizada",
-    program: "MECH 2T7 + PEY",
-    linkedinUrl: "https://www.linkedin.com/in/ali-alizada-4b0287189",
-    imagePath: "/ind/ali_alizada.png",
-  },
-  {
-    name: "Benjamin Noto",
-    program: "ECE 2T7 + PEY",
-    imagePath: "/ind/ben_noto.png",
-  },
-  {
-    name: "Julie Hayes",
-    program: "Rotman - Finance and Economics, Year 2",
-    imagePath: false,
-  },
-  {
-    name: "Fiona Wang",
-    program: "Rotman - Accounting, Year 2",
-    imagePath: false,
-  },
-  {
-    name: "Winston Zhao",
-    program: "Rotman - Management with a focus in Marketing, Year 2",
-    imagePath: false,
-  },
-];
+import { TeamMember } from "@/components/TeamMember";
+import { Description, Title } from "@/components/Text";
+import { teamMembers } from "@/data/teamMembers";
 
 export default function Team() {
-  return (
-    <main className="bg-white min-h-screen pb-16">
-      <div className="max-w-6xl mx-auto px-4 py-16 md:px-8">
-        <h1 className="text-4xl font-bold mb-12 text-gray-900">Our Team</h1>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {teamMembers.map((member) => (
-            <TeamMember
-              key={member.name}
-              name={member.name}
-              program={member.program}
-              linkedinUrl={member.linkedinUrl}
-              imagePath={member.imagePath}
-            />
-          ))}
-        </div>
-      </div>
-    </main>
-  );
+	return (
+		<main className="px-4 2xl:px-96 py-32 w-full min-h-screen">
+			<div className="">
+				<div className="flex flex-col gap-8 mb-16 items-center text-center">
+					<Title className="font-yellowtail text-8xl">
+						Meet Our Team
+					</Title>
+					<Description>
+						Passionate. Proactive. Innovative.
+					</Description>
+				</div>
+				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
+					{teamMembers.map((member) => (
+						<TeamMember
+							key={member.name}
+							name={member.name}
+							program={member.program}
+							linkedinUrl={member.linkedinUrl}
+							imagePath={member.imagePath}
+						/>
+					))}
+				</div>
+			</div>
+		</main>
+	);
 }
