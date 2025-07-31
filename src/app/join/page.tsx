@@ -22,7 +22,7 @@ export default function Join() {
 
 			{/* Subteams */}
 			<section className="flex flex-col gap-16 items-center justify-center w-full">
-				<div className="grid grid-cols-1 lg:grid-cols-4 gap-8 w-full">
+				<div className="grid grid-cols-1 xl:grid-cols-4 gap-8 w-full">
 					{subTeams.map((subteam) => {
 						return <SubTeamCard {...subteam} key={subteam.title} />;
 					})}
