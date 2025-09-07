@@ -6,17 +6,17 @@ import Image from "next/image";
 
 export function QuoteBanner() {
 	const quote = "Powering the next generation of students";
-	const [width, setWidth] = useState(1500);
+	// const [width, setWidth] = useState(1500);
 
-	useEffect(() => {
-		if (window) {
-			//   console.log(window.innerWidth);
-			setWidth(window.innerWidth);
-		}
-	}, []);
+	// useEffect(() => {
+	// 	if (window) {
+	// 		//   console.log(window.innerWidth);
+	// 		setWidth(window.innerWidth);
+	// 	}
+	// }, []);
 
 	return (
-		<div className="md:flex items-center h-fit w-full">
+		<div className="grid lg:grid-flow-col items-center justify-center justify-items-center h-fit w-full">
 			{/* <motion.div
         initial={{
           x: width * 1.4,
@@ -36,7 +36,7 @@ export function QuoteBanner() {
 				fill
 				className="object-contain relative! w-fit!"
 			/>
-			<h1 className="text-5xl md:text-8xl font-bold text-center">
+			<h1 className="text-5xl md:text-6xl font-bold text-center">
 				{quote}
 			</h1>
 			{/* </motion.div> */}

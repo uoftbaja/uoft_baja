@@ -56,13 +56,13 @@ const Navbar = () => {
 		<div className="bg-transparent z-30 fixed my-5 grid md:grid-flow-col w-screen gap-4">
 			<Link
 				href="/"
-				className="mr-2 md:ml-2 md:mr-0 order-first place-self-end md:place-self-auto relative h-12 md:h-16 bg-white shadow-xl rounded-md w-fit! p-2"
+				className="mr-2 md:ml-2 md:mr-0 order-first place-self-end md:place-self-auto relative h-12 md:h-16 bg-white shadow-lg shadow-accent-foreground rounded-md max-w-fit! p-2"
 			>
 				<Image
 					src="/UTBR_Logo.png"
 					alt="logo"
 					fill
-					className="object-contain relative! w-fit!"
+					className="object-contain relative! w-fit! max-w-15"
 				/>
 			</Link>
 
@@ -79,7 +79,7 @@ const Navbar = () => {
 								if (item.dropdown) {
 									return (
 										<NavigationMenuItem key={item.label}>
-											<NavigationMenuTrigger className="shadow-2xl border">
+											<NavigationMenuTrigger className="shadow-2xl border shadow-accent-foreground">
 												{item.label}
 											</NavigationMenuTrigger>
 											<NavigationMenuContent>
@@ -116,7 +116,7 @@ const Navbar = () => {
 											<NavigationMenuLink
 												className={cn(
 													navigationMenuTriggerStyle(),
-													"shadow-2xl border"
+													"shadow-2xl border shadow-accent-foreground"
 												)}
 												href={item.href}
 											>

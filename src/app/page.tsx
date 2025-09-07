@@ -25,7 +25,7 @@ export default function Home() {
 		<main>
 			<ImageGallery />
 			{/* <div className="px-96 py-4 flex flex-col items-center gap-16"> */}
-			<section className="flex flex-col bg-gray-300/30 px-4 2xl:px-96 py-4 min-h-screen h-full gap-16 justify-center rounded-3xl m-4 shadow-sm">
+			<section className="flex flex-col bg-gray-300/30 px-4 2xl:px-90 py-4 min-h-screen h-full gap-16 justify-center rounded-3xl m-4 shadow-sm">
 				<QuoteBanner />
 				<DisplayCard title={<Link href={"/about"}>What is Baja?</Link>}>
 					<span className="text-xl leading-relaxed">
@@ -76,7 +76,7 @@ export default function Home() {
 					</span>
 				</DisplayCard>
 			</section>{" "}
-			<section className="min-h-screen h-full flex flex-col gap-16 items-center px-4 2xl:px-96 py-4 justify-center">
+			<section className="min-h-screen h-full flex flex-col gap-16 items-center px-4 2xl:px-80 py-4 justify-center">
 				<Title>Our Subteams</Title>
 				<Description>
 					Our team is divided into 7 core subteams across engineering,
