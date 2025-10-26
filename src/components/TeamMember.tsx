@@ -20,6 +20,7 @@ export function TeamMember({
 	program,
 	linkedinUrl,
 	imagePath,
+	role,
 }: TeamMemberType) {
 	return (
 		<Card className="hover:shadow-2xl shadow-sm duration-300">
@@ -39,7 +40,11 @@ export function TeamMember({
 				<CardTitle className="text-2xl font-semibold flex gap-2 items-center">
 					{name}
 				</CardTitle>
-				<CardDescription>{program}</CardDescription>
+				<CardDescription>
+					{role}
+					<br />
+					{program}
+				</CardDescription>
 				{linkedinUrl && (
 					<CardAction>
 						<Button

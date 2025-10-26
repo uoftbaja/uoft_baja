@@ -3,4 +3,5 @@ export interface TeamMemberType {
 	program: string;
 	linkedinUrl?: string;
 	imagePath?: string | boolean;
+	role?: string;
 }

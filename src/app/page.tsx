@@ -87,6 +87,46 @@ export default function Home() {
 						return <SubTeamCard {...subteam} key={subteam.title} />;
 					})}
 				</div>
+				<DisplayCard title="How to join?">
+					<p>
+						At the beginning of the academic Fall semester, we have
+						a kickoff event followed by a recruitment cycle, stay
+						updated by following our social media accounts{" "}
+						<a
+							href="https://instagram.com/uoftbajaracing"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="text-blue-600 hover:text-blue-800"
+						>
+							@uoftbajaracing
+						</a>
+					</p>
+					{/* <p>
+						If you are hoping to join in the middle of the year send
+						us an email{" "}
+						<a
+							href="mailto:uoftbajaracing@gmail.com"
+							className="text-blue-600 hover:text-blue-800"
+						>
+							uoftbajaracing@gmail.com
+						</a>
+						.
+					</p> */}
+					<br />
+					<p>
+						We accept applications on a rolling basis, so please
+						fill out the interest form if you are interested in
+						joining the club and we will get back to you!{" "}
+						<a
+							href="https://docs.google.com/forms/d/e/1FAIpQLSdQ2hiKk3E4BTA7dAjsORhx79VLOwjdXwZcrNuZdP5mUQzAuw/viewform?usp=preview"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="text-blue-600 hover:text-blue-800"
+						>
+							Click here for the form
+						</a>
+					</p>
+				</DisplayCard>
 			</section>
 		</main>
 	);

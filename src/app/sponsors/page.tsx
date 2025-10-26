@@ -6,6 +6,7 @@ import { Description, Title } from "@/components/Text";
 import { Button } from "@/components/ui/button";
 import { sponsors } from "@/data/sponsors";
 import { cn } from "@/lib/utils";
+import { tierArray } from "@/types/sponsors";
 
 export default function Sponsors() {
 	return (
@@ -26,13 +27,39 @@ export default function Sponsors() {
 					<div
 						className={cn([
 							"grid gap-8 w-full place-content-center",
-							sponsors.length > 3 &&
-								"grid-cols-1 md:grid-cols-2 lg:grid-cols-3",
 						])}
 					>
-						{sponsors.map((sponsor) => (
-							<SponsorCard {...sponsor} key={sponsor.name} />
-						))}
+						{tierArray.map((tier) => {
+							if (
+								sponsors.filter(
+									(sponsors) => sponsors.tier === tier
+								).length > 0
+							)
+								return (
+									<div>
+										<Title className="text-2xl text-center mb-4">
+											{tier}
+										</Title>
+										<div
+											className={cn([
+												"flex gap-8 w-full place-content-center",
+											])}
+										>
+											{sponsors
+												.filter(
+													(sponsors) =>
+														sponsors.tier === tier
+												)
+												.map((sponsor) => (
+													<SponsorCard
+														{...sponsor}
+														key={sponsor.name}
+													/>
+												))}
+										</div>
+									</div>
+								);
+						})}
 					</div>
 				</section>
 
@@ -46,7 +73,7 @@ export default function Sponsors() {
 									variant={"default"}
 									onClick={() => {
 										window.open(
-											"https://drive.google.com/file/d/1lSKyjdOUsumiQ_kuDv1wLSgJK_z07k7K/view?usp=drive_link",
+											"https://drive.google.com/file/d/1YA-MsP-uSFJH15S7AR-8E5FhxM-YEWl6/view?usp=sharing",
 											"_blank"
 										);
 									}}

@@ -16,13 +16,7 @@ export default function Team() {
 				</div>
 				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full">
 					{teamMembers.map((member) => (
-						<TeamMember
-							key={member.name}
-							name={member.name}
-							program={member.program}
-							linkedinUrl={member.linkedinUrl}
-							imagePath={member.imagePath}
-						/>
+						<TeamMember {...member} key={member.name} />
 					))}
 				</div>
 			</div>

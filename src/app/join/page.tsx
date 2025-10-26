@@ -49,7 +49,7 @@ export default function Join() {
 							@uoftbajaracing
 						</a>
 					</p>
-					<p>
+					{/* <p>
 						If you are hoping to join in the middle of the year send
 						us an email{" "}
 						<a
@@ -59,6 +59,20 @@ export default function Join() {
 							uoftbajaracing@gmail.com
 						</a>
 						.
+					</p> */}
+					<br />
+					<p>
+						We accept applications on a rolling basis, so please
+						fill out the interest form if you are interested in
+						joining the club and we will get back to you!{" "}
+						<a
+							href="https://docs.google.com/forms/d/e/1FAIpQLSdQ2hiKk3E4BTA7dAjsORhx79VLOwjdXwZcrNuZdP5mUQzAuw/viewform?usp=preview"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="text-blue-600 hover:text-blue-800"
+						>
+							Click here for the form
+						</a>
 					</p>
 				</DisplayCard>
 			</section>
